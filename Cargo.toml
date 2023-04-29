@@ -3,6 +3,8 @@ name = "simple-pso-demo-rs"
 version = "0.1.0"
 edition = "2021"
 authors = ["sslime336"]
+description = "A simulation of a simple application of Particle Swarm Optimization (PSO)."
+license = "MIT"
 
 [dependencies]
 rand = "0.8.5"
