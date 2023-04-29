@@ -1,5 +1,7 @@
 # simple-pso-demo-rs
 
+[![Crates.io](https://img.shields.io/crates/v/mousetrap?style=square)](https://crates.io/crates/simple-pso-demo-rs)
+
 English | [简体中文](readme-zh-cn.md)
 
 A simple application of Particle Swarm Optimization (PSO):
