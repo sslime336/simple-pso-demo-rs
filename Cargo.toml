@@ -5,6 +5,9 @@ edition = "2021"
 authors = ["sslime336"]
 description = "A simulation of a simple application of Particle Swarm Optimization (PSO)."
 license = "MIT"
+keywords = ["pso", "demo"]
+readme = "readme.md"
+repository = "https://github.com/sslime336/simple-pso-demo-rs"
 
 [dependencies]
 rand = "0.8.5"
