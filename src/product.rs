@@ -7,10 +7,16 @@ pub struct Product {
     /// Individual fitness.
     p_best: f64,
 
-    /// x.0 ~ x.3:
-    /// - restocking_price
-    /// - selling_price
-    /// - market_demand
+    /// There is a three-dimensional space, whose coordinate axis x, y, z's meaning
+    /// is below:
+    /// 
+    /// x.0 (x)- restocking_price
+    /// 
+    /// x.1 (y)- selling_price
+    /// 
+    /// x.2 (z)- market_demand
+    /// 
+    /// Score value is 1.
     x: (f64, f64, f64),
 
     /// Velocity vector.
@@ -112,6 +118,27 @@ impl Product {
         }
     }
 
+    /// Mock the given number of [`Product`]s.
+    pub fn generate_products(n: i32) -> Vec<Product> {
+        let mut products = vec![];
+
+        let mut rng = rand::thread_rng();
+        for _ in 0..n {
+            let restocking_price = rng.gen_range(20.0..60.0);
+            let selling_price = rng.gen_range(restocking_price..100.0);
+            let shelf_life = rng.gen_range(30.0..90.0);
+            let market_demand = rng.gen_range(1.0..10.0);
+            let product = Product::new(
+                (restocking_price, selling_price, market_demand),
+                (Self::random_v(), Self::random_v(), Self::random_v()),
+            );
+            products.push(product);
+        }
+
+        products
+    }
+
+    #[deprecated]
     pub fn generate_products_matrix(rows: usize, cols: usize) -> Vec<Vec<Product>> {
         let mut products_matrix = Vec::new();
         let mut rng = rand::thread_rng();

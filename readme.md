@@ -22,10 +22,16 @@ pub struct Product {
     /// Individual fitness
     p_best: f64,
 
-    /// Position in the particle swarm
-    /// - x.0: purchase price
-    /// - x.1: selling price
-    /// - x.2: market demand
+    /// There is a three-dimensional space, whose coordinate axis x, y, z's meaning
+    /// is below:
+    /// 
+    /// x.0 (x)- restocking_price
+    /// 
+    /// x.1 (y)- selling_price
+    /// 
+    /// x.2 (z)- market_demand
+    /// 
+    /// Score value is 1.
     x: (f64, f64, f64),
 
     /// Velocity vector
